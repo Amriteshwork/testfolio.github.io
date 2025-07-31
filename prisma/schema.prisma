@@ -9,10 +9,11 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"  // Changed from "sqlite"
   url      = env("DATABASE_URL")
 }
 
+// Keep all your existing models as they are
 model User {
   id        String   @id @default(cuid())
   email     String   @unique
